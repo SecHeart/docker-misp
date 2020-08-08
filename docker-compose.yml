@@ -18,7 +18,8 @@ services:
       - "MYSQL_ROOT_PASSWORD=password"
       - "MYSQL_DATABASE=misp"
     volumes:
-      - mysql_data:/var/lib/mysql
+    # - mysql_data:/var/lib/mysql
+      - "./mysql_data/:/var/lib/mysql"
 
   misp:
     image: coolacid/misp-docker:core-latest
@@ -57,5 +58,5 @@ services:
       - redis
       - db
 
-volumes:
-    mysql_data:
+#volumes:
+     #mysql_data:
